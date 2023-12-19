@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+    <p id="para">0</p>
+   <button id="btn">click</button>
+   <button onclick="cc()">Stop</button>
+   <button id="btn1">Re-Start</button>
+   <script>
+    var i=0;
+    document.getElementById("btn").addEventListener('click',fun);
+    function fun(){
+        document.getElementById('para').innerHTML=i;
+        i++;
+    }
+
+   var abc= setInterval(function(){
+        fun();
+    },1000)
+
+    function cc(){
+        clearInterval(abc);
+    }
+    document.getElementById('btn1').addEventListener('click',res);
+    function res(){
+        document.getElementById('btn').addEventListener('click',fun)
+        setInterval(fun,1000);
+    }
+   </script>
+</body>
+</html>
+
+
+<!-- 
+
+<script>
+    var counter=0;
+    function count(){
+        counter++;
+      console.log(counter);
+    }
+   let clear= setInterval(function(){
+    count()
+        if(counter===10){
+            clearInterval(clear)
+        }
+    },1000);
+</script> -->

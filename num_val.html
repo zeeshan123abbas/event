@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>number validate.....</h1>
+    <input type="text" name="" id="inp" onkeypress="val(this)">
+    <p id="res"></p>
+
+    <script>
+        function val(elem){
+            document.getElementById('res').innerHTML=elem.value;
+            if(isNaN(elem.value)){
+                document.getElementById('res').innerHTML="plz eneter number only...";
+                document.getElementById('res').style.color='red';
+            }else{
+                document.getElementById('res').innerHTML="valid number...";
+                document.getElementById('res').style.color='green';
+                if(elem.value.length>=10){
+                    document.getElementById('res').innerHTML="Enter only ten digit...";
+                document.getElementById('res').style.color='black';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
